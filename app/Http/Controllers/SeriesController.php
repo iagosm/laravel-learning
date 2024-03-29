@@ -20,13 +20,8 @@ class SeriesController extends Controller
             'Grey\'s Anatomy',
             'Haikyuu',
         ];
-        $html = '<ul>';
-        foreach($series as $serie) {
-        $html.= "<li>$serie</li>";
-        }
-        $html .= '</ul>';
-        //  return response($html, 201,  []);
-        return $html;
+        // return view('listar-series', compact('series'));
+        return view('series.index')->with('series', $series);
     }
 
     /**
@@ -36,7 +31,7 @@ class SeriesController extends Controller
      */
     public function create()
     {
-        //
+      return view('series.create');
     }
 
     /**
