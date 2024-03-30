@@ -20,9 +20,12 @@ Route::get('/', function () {
 
 // Router::resource('/series', SerieController)
 
-Route::resource('/series', SeriesController::class);
+Route::resource('/series', SeriesController::class)
+    ->except('show');
+    // ->only(['index', 'create', 'store', 'destroy', 'edit']);
 // Route::controller(SeriesController::class)->group( function() {
 //     Route::get('/series', 'index')->name('series.index');
 //     Route::get('/series/create', 'create')->name('series.create');
 //     Route::post('/series/save', 'store')->name('series.store');
 // });
+ 
